@@ -1,11 +1,11 @@
-const cookieName = 'bilibili'
-const cookieKey = 'chavy_cookie_bilibili'
-const chavy = init()
+const cookieName = 'muniucloud'
+const cookieKey = 'kaitian_cookie_muniucloud'
+const kaitian = init()
 const cookieVal = $request.headers['Cookie']
 if (cookieVal) {
-  if (chavy.setdata(cookieVal, cookieKey)) {
-    chavy.msg(`${cookieName}`, '获取Cookie: 成功', '')
-    chavy.log(`[${cookieName}] 获取Cookie: 成功, cookie: ${cookieVal}`)
+  if (kaitian.setdata(cookieVal, cookieKey)) {
+    kaitian.msg(`${cookieName}`, '获取Cookie: 成功', '')
+    kaitian.log(`[${cookieName}] 获取Cookie: 成功, cookie: ${cookieVal}`)
   }
 }
 function init() {
@@ -51,4 +51,4 @@ function init() {
   }
   return { isSurge, isQuanX, msg, log, getdata, setdata, get, post, done }
 }
-chavy.done()
+kaitian.done()
