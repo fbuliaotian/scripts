@@ -6,7 +6,7 @@
   "repo": "https://github.com/fbuliaotian/scripts", 
   "apps": [
     {
-      "id": "qiandao",
+      "id": 'muniucloud',
       "name": "机场签到",
       "keys": ["chavy_cookie_muniucloud"],
       "author": "@fbuliaotian",
