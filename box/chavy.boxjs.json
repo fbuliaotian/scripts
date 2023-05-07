@@ -8,35 +8,14 @@
     {
       "id": 'muniucloud',
       "name": "机场签到",
-      "keys": ["chavy_cookie_muniucloud"],
+      "keys": ["kaitian_cookie_muniucloud"],
       "author": "@fbuliaotian",
-      "repo": "https://github.com/fbuliaotian/scripts/blob/master/bilibili/bilibili.js",
-      "script": "https://raw.githubusercontent.com/fbuliaotian/scripts/master/bilibili/bilibili.js",
+      "repo": "https://github.com/fbuliaotian/scripts/blob/master/bilibili/muniucloud.js",
+      "script": "https://raw.githubusercontent.com/fbuliaotian/scripts/master/bilibili/muniucloud.js",
       "icons": [
         "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/bilibili.png",
         "https://raw.githubusercontent.com/Orz-3/mini/master/Color/bilibili.png"
       ]
     },
-    {
-      "id": "WPS",
-      "name": "WPS",
-      "keys": ["chavy_signhomeurl_wps", "chavy_signhomeheader_wps"],
-      "settings": [
-        {
-          "id": "CFG_wps_inviteTime",
-          "name": "邀请间隔 (毫秒)",
-          "val": 2000,
-          "type": "number",
-          "desc": "每次邀请间隔时间"
-        }
-      ],
-      "author": "@fbuliaotian",
-      "repo": "https://github.com/fbuliaotian/scripts/tree/master/wps",
-      "script": "https://raw.githubusercontent.com/fbuliaotian/scripts/master/wps/wps.js",
-      "icons": [
-        "https://raw.githubusercontent.com/Orz-3/mini/master/Alpha/wps.png",
-        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/wps.png"
-      ]
-    }
   ]
 }
