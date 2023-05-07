@@ -1,5 +1,5 @@
-const cookieName = 'bilibili'
-const cookieKey = 'chavy_cookie_bilibili'
+const cookieName = 'muniucloud'
+const cookieKey = 'chavy_cookie_muniucloud'
 const chavy = init()
 const cookieVal = chavy.getdata(cookieKey)
 
@@ -7,39 +7,25 @@ sign()
 
 function sign() {
   let url = {
-    url: `https://api.live.bilibili.com/pay/v1/Exchange/silver2coin`,
+    url: `https://muniucloud.buzz/user/checkin`,
     headers: {
       Cookie: cookieVal
     }
   }
-  url.headers['Origin'] = 'api.live.bilibili.com'
-  url.headers['Referer'] = 'http://live.bilibili.com/'
+  url.headers['Origin'] = 'https://muniucloud.buzz'
+  url.headers['Referer'] = 'https://muniucloud.buzz/user'
   url.headers['Accept'] = 'application/json, text/javascript, */*; q=0.01'
   url.headers['User-Agent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_2) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.4 Safari/605.1.15'
 
   chavy.get(url, (error, response, data) => {
     let result = JSON.parse(data)
-    let title = `${cookieName} 银瓜子转硬币`
+    let title = `${cookieName} 签到`
     // 兑换成功
     if (result && result.code == 0) {
       let subTitle = `${result.message}`
-      let detail = `成功兑换: ${result.data.coin} 个硬币\n当前银瓜子: ${result.data.silver} , 当前金瓜子: ${result.data.gold}`
+      let detail = `签到成功: ${result.data.msg} `
       chavy.msg(title, subTitle, detail)
-    }
-    // 兑换中止（重复兑换&银瓜子不足）
-    else if (result && result.code == 403) {
-      let subTitle = `未成功兑换`
-      let detail = `${result.message}`
-      chavy.msg(title, subTitle, detail)
-    }
-    // 兑换失败
-    else {
-      let subTitle = `兑换失败`
-      let detail = `说明: ${result.message}`
-      chavy.msg(title, subTitle, detail)
-    }
-    chavy.log(`${cookieName}, data: ${data}`)
-  })
+    })
 
   chavy.done()
 }
